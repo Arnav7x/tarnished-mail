@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Tarnished Mail",
+  "version": "1.0",
+  "description": "Elden Ring–style message when you send an email",
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"],
+      "css": ["overlay.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/*", "fonts/*"],
+      "matches": ["https://mail.google.com/*"]
+    }
+]
+
+}

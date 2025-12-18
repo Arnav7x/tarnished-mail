@@ -1,0 +1,84 @@
+@font-face {
+  font-family: "Mantinia";
+  src: url(chrome-extension://__MSG_@@extension_id__/fonts/Mantinia-Regular.otf)
+       format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+/* Root overlay */
+#elden-overlay-root {
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: screenFade 4.5s ease forwards;
+}
+
+/* Inner container */
+.elden-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Text */
+.elden-text {
+  font-family: "Mantinia", serif;
+  color: #F9C043;
+  font-size: 50px;
+  letter-spacing: 3px;
+  text-align: center;
+
+  opacity: 0;
+  transform: scale(0.96);
+  animation: eldenText 4.5s ease forwards;
+
+  /* Optional Elden polish */
+  text-shadow:
+    0 0 10px rgba(230, 225, 213, 0.15),
+    0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes eldenText {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes screenFade {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
